@@ -1,8 +1,8 @@
 from PIL import Image, ImageOps, ImageFilter
 
-#Add the input image path here
+#Add the input image path 
 input_path = ""      
-#Add the output image path here          
+#Add the output image path           
 output_path = "black_white.png"
 DPI = 300                         
 CM = 10                           
@@ -17,7 +17,7 @@ image = Image.alpha_composite(background, image).convert("L")
 #Boost contrast
 image = ImageOps.autocontrast(image, cutoff=0)
 
-#Add blur to smooth edges
+#Added blur to smooth edges
 image = image.filter(ImageFilter.GaussianBlur(radius=1))
 
 threshold = 150  
